@@ -1,6 +1,8 @@
 package lk.zerocode.hotel_management_system.model;
 
 import jakarta.persistence.*;
+import lk.zerocode.hotel_management_system.model.enums.BookingStatus;
+import lk.zerocode.hotel_management_system.model.enums.ServiceType;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -13,11 +15,16 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String serviceType;
+    @Enumerated(EnumType.STRING)
+    private ServiceType serviceType;
+
+    @Enumerated(EnumType.STRING)
+    private BookingStatus bookingStatus;
+
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private Double totalPrice;
-    private String bookingStatus;
+
 
     @ManyToOne
     private User user;

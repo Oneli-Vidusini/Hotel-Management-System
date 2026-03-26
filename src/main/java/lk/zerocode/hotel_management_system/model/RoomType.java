@@ -1,6 +1,7 @@
 package lk.zerocode.hotel_management_system.model;
 
 import jakarta.persistence.*;
+import lk.zerocode.hotel_management_system.model.enums.RoomTypeName;
 import lombok.Data;
 
 @Data
@@ -11,7 +12,8 @@ public class RoomType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String roomTypeName;
+    @Enumerated(EnumType.STRING)
+    private RoomTypeName roomTypeName;
     private long roomTypeCapacity;
     private double basicPrice;
 }

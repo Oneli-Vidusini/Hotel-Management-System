@@ -1,6 +1,7 @@
 package lk.zerocode.hotel_management_system.model;
 
 import jakarta.persistence.*;
+import lk.zerocode.hotel_management_system.model.enums.RoomStatus;
 import lombok.Data;
 
 @Data
@@ -12,7 +13,9 @@ public class Room {
     private long id;
 
     private long roomNumber;
-    private String roomStatus;
+
+    @Enumerated(EnumType.STRING)
+    private RoomStatus roomStatus;
 
     @ManyToOne
     private Hotel hotel;

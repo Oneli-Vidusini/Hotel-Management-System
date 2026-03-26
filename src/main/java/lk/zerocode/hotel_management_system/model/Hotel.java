@@ -12,6 +12,4 @@ public class Hotel {
     private Long id;
     private String hotelName;
     private String location;
-
-
 }

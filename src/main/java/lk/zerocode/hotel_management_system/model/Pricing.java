@@ -16,4 +16,7 @@ public class Pricing {
     private double price ;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
+
+    @ManyToOne
+    private RoomType roomType;
 }

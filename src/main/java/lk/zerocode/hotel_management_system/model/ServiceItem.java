@@ -13,4 +13,7 @@ public class ServiceItem {
     private String serviceItemName;
     private String capacity;
     private double basicPrice;
+
+    @ManyToOne
+    private HotelService hotelService;
 }

@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -15,4 +16,10 @@ public class ServiceBooking {
     private long id;
     private LocalDate date;
     private LocalTime timeSlot;
+
+    @OneToOne
+    private Booking booking;
+
+    @ManyToOne
+    private ServiceItem serviceItems;
 }

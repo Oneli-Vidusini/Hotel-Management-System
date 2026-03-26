@@ -11,4 +11,9 @@ public class PackageBooking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToOne
+    private Booking booking;
+
+    @ManyToOne
+    private Package packages;
 }

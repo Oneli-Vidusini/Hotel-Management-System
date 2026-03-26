@@ -3,7 +3,6 @@ package lk.zerocode.hotel_management_system.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -19,4 +18,7 @@ public class Booking {
     private LocalDateTime endTime;
     private Double totalPrice;
     private String bookingStatus;
+
+    @ManyToOne
+    private User user;
 }

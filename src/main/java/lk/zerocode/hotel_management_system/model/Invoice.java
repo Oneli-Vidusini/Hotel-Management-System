@@ -14,4 +14,7 @@ public class Invoice {
     private Long id;
     private double totalAmount;
     private LocalDate issueDate;
+
+    @OneToOne
+    private Booking booking;
 }

@@ -13,4 +13,10 @@ public class Room {
 
     private long roomNumber;
     private String roomStatus;
+
+    @ManyToOne
+    private Hotel hotel;
+
+    @ManyToOne
+    private RoomType roomType;
 }

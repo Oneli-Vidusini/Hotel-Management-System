@@ -15,4 +15,10 @@ public class RoomBooking {
 
     private LocalDateTime checkInTime;
     private LocalDateTime checkOutTime;
+
+    @OneToOne
+    private Booking booking;
+
+    @ManyToOne
+    private Room room;
 }

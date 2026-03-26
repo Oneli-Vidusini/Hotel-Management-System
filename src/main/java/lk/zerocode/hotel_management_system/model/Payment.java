@@ -14,4 +14,7 @@ public class Payment {
     private double amount;
     private String method;
     private String status;
+
+    @OneToOne
+    private Booking booking;
 }

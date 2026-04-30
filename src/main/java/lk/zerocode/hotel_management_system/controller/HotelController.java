@@ -27,19 +27,18 @@ public class HotelController {
         return hotelService.getHotelById(id);
     }
 
-    @GetMapping(value = "/{hotelName}/hotels")
+    @GetMapping(value = "/{hotelName}/name/hotels")
     public HotelRequestDTO getHotelByHotelName(@PathVariable String hotelName){
         return hotelService.getHotelByName(hotelName);
     }
 
     @PutMapping(value = "/{id}/hotels")
-    public HotelResponseDTO updateHotel(Long id, HotelRequestDTO hotelRequestDTO){
-        hotelService.updateHotel(id, hotelRequestDTO);
-        return new HotelResponseDTO();
+    public HotelResponseDTO updateHotel(@PathVariable Long id, @RequestBody HotelRequestDTO hotelRequestDTO){
+        return hotelService.updateHotel(id, hotelRequestDTO);
     }
 
     @DeleteMapping(value = "/{id}/hotels")
-    public HotelResponseDTO deleteHotel(Long id){
+    public HotelResponseDTO deleteHotel(@PathVariable Long id){
         hotelService.deleteHotel(id);
         return null;
     }

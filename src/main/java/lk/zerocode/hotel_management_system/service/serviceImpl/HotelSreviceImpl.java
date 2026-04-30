@@ -70,10 +70,10 @@ public class HotelSreviceImpl implements HotelService {
         hotel.setLocation(hotelRequestDTO.getLocation());
         hotelRepository.save(hotel);
 
-        HotelRequestDTO hotelRequestDto = new HotelRequestDTO();
-        hotelRequestDto.setHotelName(hotel.getHotelName());
-        hotelRequestDto.setLocation(hotel.getLocation());
-        return new HotelResponseDTO();
+        HotelResponseDTO hotelResponseDTO = new HotelResponseDTO();
+        hotelResponseDTO.setHotelName(hotel.getHotelName());
+        hotelResponseDTO.setLocation(hotel.getLocation());
+        return hotelResponseDTO;
     }
 
     @Override
@@ -84,8 +84,6 @@ public class HotelSreviceImpl implements HotelService {
         hotelRepository.deleteById(id);
 
         return null;
-
     }
-
 
 }
